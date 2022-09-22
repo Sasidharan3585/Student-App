@@ -1,0 +1,48 @@
+<h3>Register Student</h3>
+<div class="container">
+<form (ngSubmit)="createStudent()">
+    <!-- row#1 -->
+    <div class="row">
+        <div class="col-2">
+            <label for="studentId" class="form-label">STUDENT ID</label>
+        </div>
+        <div class="col-4">
+            <input type="text" [(ngModel)]="student.studentId" name="studentId" id="studentId" class="form-control" required />
+        </div>
+    </div>
+
+    <!-- row#2 -->
+    <div class="row">
+        <div class="col-2">
+            <label for="studentName" class="form-label">NAME</label>
+        </div>
+        <div class="col-4">
+            <input type="text" [(ngModel)]="student.studentName" name="studentName" id="studentName" class="form-control" required />
+        </div>
+    </div>
+
+    <!-- row#3 -->
+    <div class="row">
+        <div class="col-2">
+            <label for="course" class="form-label">COURSE</label>
+        </div>
+        <div class="col-4">
+            <input type="text" [(ngModel)]="student.course" name="course" id="course" class="form-control" required />
+        </div>
+    </div>
+
+    <!-- row#4 -->
+    <div class="row">
+        <div class="col-2">
+            <label for="dept" class="form-label">DEPARTMENT</label>
+        </div>
+        <div class="col-4">
+            <input type="text" [(ngModel)]="student.dept" name="dept" id="dept" class="form-control" required />
+        </div>
+    </div>
+
+    <input type="submit" value="Add Student" class="btn btn-success" />
+    <a routerLink="/Student"><button type="button" class="btn btn-primary  ms-3">Back</button></a>
+</form>
+</div>
+<span class="text-info">{{message!}}</span>

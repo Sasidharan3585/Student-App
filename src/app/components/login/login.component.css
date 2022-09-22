@@ -1,0 +1,23 @@
+body{
+    font-family: sans-serif;
+   
+}
+.container-fluid{
+   padding: 10vh;
+
+    /* border: 2px solid black;
+    /* border-radius: 10%; */
+    /* border-spacing: 10px;  */
+    
+
+    
+
+}
+
+.container-fluid h1{
+    font-weight: bolder;
+    color: rgb(34, 230, 12);
+}
+
+
+

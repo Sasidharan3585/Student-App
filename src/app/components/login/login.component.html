@@ -1,0 +1,33 @@
+
+    <div class="container-fluid">
+        <h1>Login Here</h1>
+        <form [formGroup]="" (ngSubmit)="getValue()">
+            <div class="row mb-3">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-5">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your email</mat-label>
+                        <input matInput placeholder="abc@example.com" [formControl]="email" [(ngModel)]="user.email" >
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-5">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" [(ngModel)]="user.password"  >
+                        <mat-error *ngIf="password.touched">{{getMessage()}}</mat-error>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Sign in</button>
+            <a routerLink="/Register"> <button type="button" class="btn btn-primary ms-3">Register</button></a>
+        </form>
+    </div>

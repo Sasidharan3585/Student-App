@@ -1,0 +1,44 @@
+<div class="container">
+<form (ngSubmit)="getValue()">
+    <div class="card mx-auto mt-3" style="width: 30rem;">
+        <div class="card-body">
+            <div class="input-group mb-3">
+                <span class="input-group-text">Name</span>
+                <input [(ngModel)]="getDetails.name" #name="ngModel" required name="firstName" type="text"
+                    aria-label="First name" class="form-control">
+            </div>
+            <div *ngIf="name.invalid && name.touched" class="alert alert-danger mt-2" role="alert">
+                Please enter a valid input
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input [(ngModel)]="getDetails.email" #email="ngModel" required email name="email" type="email"
+                    class="form-control" id="exampleFormControlInput1" placeholder="Email">
+                <div *ngIf="email.invalid && email.touched" class="alert alert-danger mt-2" role="alert">
+                    Please enter a valid Email
+                </div>
+                <div class="mb-3">
+                    <label for="userName" class="form-label">User Name</label>
+                    <input [(ngModel)]="getDetails.userName" #username="ngModel" required name="userName" type="text"
+                        class="form-control" id="userName" placeholder="UserName">
+                    <div *ngIf="username.invalid && username.touched" class="alert alert-danger mt-2" role="alert">
+                        Please enter a valid input
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input [(ngModel)]="getDetails.password" name="password" minlength="4" #password="ngModel" required
+                type="password" class="form-control" id="inputPassword" placeholder="password">
+            <div *ngIf="password.invalid && password.touched" class="alert alert-danger mt-2" role="alert">
+                Please enter a valid password with minimum 4 characters
+            </div>
+        </div>
+        <button class="btn btn-primary ms-3" value="submit" type="submit"><i class="bi bi-pencil-square"></i>
+            Register</button>
+        <a routerLink="/Login" class="btn btn-primary">Cancel</a>
+    </div>
+</form>
+</div>
+
